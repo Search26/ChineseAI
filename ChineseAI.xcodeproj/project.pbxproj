@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9B34726F2DB8C30B0045DF05 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9B34726E2DB8C30B0045DF05 /* GoogleSignIn */; };
+		9B3472712DB8C30B0045DF05 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472702DB8C30B0045DF05 /* GoogleSignInSwift */; };
+		9B3472F12DB8D1430045DF05 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F02DB8D1430045DF05 /* FacebookAEM */; };
+		9B3472F32DB8D1430045DF05 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F22DB8D1430045DF05 /* FacebookBasics */; };
+		9B3472F52DB8D1430045DF05 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F42DB8D1430045DF05 /* FacebookCore */; };
+		9B3472F72DB8D1430045DF05 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F62DB8D1430045DF05 /* FacebookLogin */; };
+		9B3472F92DB8D1430045DF05 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F82DB8D1430045DF05 /* FacebookShare */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9B3471832DB8855C0045DF05 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +39,22 @@
 		9B34718C2DB8855C0045DF05 /* ChineseAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9B34730C2DB8E3600045DF05 /* Exceptions for "ChineseAI" folder in "ChineseAI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9B34716E2DB885590045DF05 /* ChineseAI */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9B3471712DB885590045DF05 /* ChineseAI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9B34730C2DB8E3600045DF05 /* Exceptions for "ChineseAI" folder in "ChineseAI" target */,
+			);
 			path = ChineseAI;
 			sourceTree = "<group>";
 		};
@@ -52,6 +75,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3472F12DB8D1430045DF05 /* FacebookAEM in Frameworks */,
+				9B3472F52DB8D1430045DF05 /* FacebookCore in Frameworks */,
+				9B3472F72DB8D1430045DF05 /* FacebookLogin in Frameworks */,
+				9B3472F32DB8D1430045DF05 /* FacebookBasics in Frameworks */,
+				9B34726F2DB8C30B0045DF05 /* GoogleSignIn in Frameworks */,
+				9B3472712DB8C30B0045DF05 /* GoogleSignInSwift in Frameworks */,
+				9B3472F92DB8D1430045DF05 /* FacebookShare in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +142,13 @@
 			);
 			name = ChineseAI;
 			packageProductDependencies = (
+				9B34726E2DB8C30B0045DF05 /* GoogleSignIn */,
+				9B3472702DB8C30B0045DF05 /* GoogleSignInSwift */,
+				9B3472F02DB8D1430045DF05 /* FacebookAEM */,
+				9B3472F22DB8D1430045DF05 /* FacebookBasics */,
+				9B3472F42DB8D1430045DF05 /* FacebookCore */,
+				9B3472F62DB8D1430045DF05 /* FacebookLogin */,
+				9B3472F82DB8D1430045DF05 /* FacebookShare */,
 			);
 			productName = ChineseAI;
 			productReference = 9B34716F2DB885590045DF05 /* ChineseAI.app */;
@@ -195,6 +232,10 @@
 			);
 			mainGroup = 9B3471662DB885590045DF05;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9B34726D2DB8C30B0045DF05 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9B3471702DB885590045DF05 /* Products */;
 			projectDirPath = "";
@@ -392,10 +433,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChineseAI/Preview Content\"";
-				DEVELOPMENT_TEAM = BG3446M3S7;
+				DEVELOPMENT_TEAM = ARYC9M32DB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ChineseAI/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -406,12 +448,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thuphuong.ChineseAI;
+				PRODUCT_BUNDLE_IDENTIFIER = thuphuong.chinese.ai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -431,10 +473,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChineseAI/Preview Content\"";
-				DEVELOPMENT_TEAM = BG3446M3S7;
+				DEVELOPMENT_TEAM = ARYC9M32DB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ChineseAI/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -445,12 +488,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = thuphuong.ChineseAI;
+				PRODUCT_BUNDLE_IDENTIFIER = thuphuong.chinese.ai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -591,6 +634,63 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B34726D2DB8C30B0045DF05 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B34726E2DB8C30B0045DF05 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B34726D2DB8C30B0045DF05 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		9B3472702DB8C30B0045DF05 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B34726D2DB8C30B0045DF05 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		9B3472F02DB8D1430045DF05 /* FacebookAEM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
+		};
+		9B3472F22DB8D1430045DF05 /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		9B3472F42DB8D1430045DF05 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		9B3472F62DB8D1430045DF05 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		9B3472F82DB8D1430045DF05 /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B3471672DB885590045DF05 /* Project object */;
 }
