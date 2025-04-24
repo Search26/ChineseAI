@@ -65,6 +65,14 @@ struct LoginView: View {
                         .multilineTextAlignment(.center)
                 }
                 Spacer()
+                // Add navigation to MainTabBarView on successful login
+                NavigationLink(destination: MainTabBarView(), isActive: Binding(
+                    get: { if case .success = viewModel.authState { return true } else { return false } },
+                    set: { _ in }
+                )) {
+                    EmptyView()
+                }
+                .hidden()
             }
             .padding()
             .background(Color(.systemBackground))
