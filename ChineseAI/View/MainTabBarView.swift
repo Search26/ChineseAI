@@ -12,10 +12,6 @@ struct MainTabBarView: View {
                 .tabItem {
                     Label("Practice", systemImage: "waveform")
                 }
-            LearnView()
-                .tabItem {
-                    Label("Learn", systemImage: "book")
-                }
             ReviewView()
                 .tabItem {
                     Label("Review", systemImage: "checkmark.circle")

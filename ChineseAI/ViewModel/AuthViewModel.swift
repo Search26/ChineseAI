@@ -7,6 +7,11 @@ import FBSDKLoginKit
 @MainActor
 @available(iOS 16.0, *)
 final class AuthViewModel: ObservableObject {
+    private let authManager: AuthManager
+    
+    init(authManager: AuthManager) {
+        self.authManager = authManager
+    }
     enum AuthState {
         case idle
         case loading
@@ -16,7 +21,6 @@ final class AuthViewModel: ObservableObject {
     
     @Published var authState: AuthState = .idle
     
-    init() {}
     
     func signIn(provider: AuthProvider) async {
         authState = .loading
@@ -59,24 +63,26 @@ final class AuthViewModel: ObservableObject {
             throw AuthError.missingGoogleClientID
         }
         guard let rootViewController = UIApplication.shared.connectedScenes
-                .compactMap({ ($0 as? UIWindowScene)?.keyWindow }).first?.rootViewController else {
+            .compactMap({ ($0 as? UIWindowScene)?.keyWindow }).first?.rootViewController else {
             throw AuthError.noRootViewController
         }
         let config = GIDConfiguration(clientID: clientID)
         let result = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
         let user = result.user
         let accessToken = user.accessToken.tokenString
+        let idToken = user.idToken?.tokenString
         let refreshToken = user.refreshToken.tokenString
         let expiresIn = user.accessToken.expirationDate
+        authManager.login(provider: "google", accessToken: accessToken, idToken: idToken, refreshToken: refreshToken, expiresAt: expiresIn)
         let email = user.profile?.email
         let name = user.profile?.name
         let id = user.userID
-        print("Google user: id=\(id ?? "") name=\(name ?? "") email=\(email ?? "") accessToken=\(accessToken) refreshToken=\(refreshToken) expiresIn=\(expiresIn)")
+        print("Google user: id=\(id ?? "") name=\(name ?? "") email=\(email ?? "") accessToken=\(accessToken) idToken=\(idToken ?? "nil") refreshToken=\(refreshToken) expiresIn=\(expiresIn)")
     }
-
+    
     private func signInWithFacebook() async throws {
         guard let rootViewController = UIApplication.shared.connectedScenes
-                .compactMap({ ($0 as? UIWindowScene)?.keyWindow }).first?.rootViewController else {
+            .compactMap({ ($0 as? UIWindowScene)?.keyWindow }).first?.rootViewController else {
             throw AuthError.noRootViewController
         }
         let manager = LoginManager()

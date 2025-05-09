@@ -14,6 +14,8 @@
 		9B3472F52DB8D1430045DF05 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F42DB8D1430045DF05 /* FacebookCore */; };
 		9B3472F72DB8D1430045DF05 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F62DB8D1430045DF05 /* FacebookLogin */; };
 		9B3472F92DB8D1430045DF05 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3472F82DB8D1430045DF05 /* FacebookShare */; };
+		9B43EFC32DCDDDB3000226EF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B43EFC22DCDDDB3000226EF /* RealmSwift */; };
+		9B43EFC62DCDDF96000226EF /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9B43EFC22DCDDDB3000226EF /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,20 @@
 			remoteInfo = ChineseAI;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9B43EFC72DCDDF96000226EF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9B43EFC62DCDDF96000226EF /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9B34716F2DB885590045DF05 /* ChineseAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChineseAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B43EFC32DCDDDB3000226EF /* RealmSwift in Frameworks */,
 				9B3472F12DB8D1430045DF05 /* FacebookAEM in Frameworks */,
 				9B3472F52DB8D1430045DF05 /* FacebookCore in Frameworks */,
 				9B3472F72DB8D1430045DF05 /* FacebookLogin in Frameworks */,
@@ -132,6 +149,7 @@
 				9B34716B2DB885590045DF05 /* Sources */,
 				9B34716C2DB885590045DF05 /* Frameworks */,
 				9B34716D2DB885590045DF05 /* Resources */,
+				9B43EFC72DCDDF96000226EF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +167,7 @@
 				9B3472F42DB8D1430045DF05 /* FacebookCore */,
 				9B3472F62DB8D1430045DF05 /* FacebookLogin */,
 				9B3472F82DB8D1430045DF05 /* FacebookShare */,
+				9B43EFC22DCDDDB3000226EF /* RealmSwift */,
 			);
 			productName = ChineseAI;
 			productReference = 9B34716F2DB885590045DF05 /* ChineseAI.app */;
@@ -235,6 +254,7 @@
 			packageReferences = (
 				9B34726D2DB8C30B0045DF05 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				9B43EFC12DCDDDB3000226EF /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9B3471702DB885590045DF05 /* Products */;
@@ -652,6 +672,14 @@
 				minimumVersion = 14.1.0;
 			};
 		};
+		9B43EFC12DCDDDB3000226EF /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -689,6 +717,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B3472EF2DB8D1430045DF05 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookShare;
+		};
+		9B43EFC22DCDDDB3000226EF /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B43EFC12DCDDDB3000226EF /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
