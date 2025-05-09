@@ -4,6 +4,8 @@
 
 import Foundation
 import Combine
+import RealmSwift
+import RealmSwift
 
 final class AuthManager: ObservableObject {
     @Published var isAuthenticated: Bool = false
@@ -14,6 +16,24 @@ final class AuthManager: ObservableObject {
     private let supportedProviders = ["google", "facebook", "apple"]
 
     init() {
+        // Configure Realm migration
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < 1 {
+                    // Add idToken property to existing AuthToken objects
+                    migration.enumerateObjects(ofType: AuthToken.className()) { oldObject, newObject in
+                        if newObject != nil {
+                            newObject!["idToken"] = nil
+                        }
+                    }
+                }
+            }
+        )
+        
+        // Set the configuration
+        Realm.Configuration.defaultConfiguration = config
+        
         autoLoginIfPossible()
     }
 
